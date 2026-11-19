@@ -1,115 +1,630 @@
+/* ===================================
+   1. CSS VARIABLES
+=================================== */
+
+:root {
+
+    --primary: #102a5e;
+
+    --accent: #f1c40f;
+
+    --background: #f4f4f4;
+
+    --text: #333333;
+
+    --white: #ffffff;
+
+}
+
+
+/* ===================================
+   2. GENERAL STYLING
+=================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+    scroll-padding-top: 90px;
+
+}
 
 body {
-    font-family: Arial;
-    margin: 0;
-    background-color: #f2f2f2;
-}
-.pghead{
-    color: rgb(172, 60, 60);
-    font-size:30px;
-    font-weight:bold;
-    font-style: italic;
+
+    font-family: Arial, sans-serif;
+
+    background-color: var(--background);
+
+    color: var(--text);
+
+    line-height: 1.6;
+
 }
 
 
-header, footer {
-    background-color: rgba(183, 134, 45, 0.488);
-    color: rgba(29, 28, 28, 0.27);
-    padding: 15px;
+/* ===================================
+   3. NAVIGATION BAR
+=================================== */
+
+header {
+
+    background-color: var(--primary);
+
+    color: var(--white);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 40px;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+
+}
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: var(--accent);
+
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-nav ul {
     display: flex;
-    list-style: none;
+
     gap: 20px;
+
 }
 
 nav a {
-    color: white;
+
+    color: var(--white);
+
     text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+
 }
+
+nav a:hover {
+
+    color: var(--accent);
+
+}
+
+
+/* ===================================
+   4. HERO SECTION
+=================================== */
 
 .hero {
-    background-color: #172f65;
-    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #102a5e,
+        #2466a5
+    );
+
+    color: var(--white);
+
     text-align: center;
-    padding: 50px;
+
+    padding: 160px 20px 100px;
+
 }
 
-.btn, .book-btn {
-    background-color: orange;
-    color: white;
-    padding: 10px;
+.hero-content {
+
+    max-width: 800px;
+
+    margin: auto;
+
+}
+
+.hero h1 {
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+
+}
+
+.hero p {
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+
+}
+
+.hero-btn {
+
+    display: inline-block;
+
+    background-color: var(--accent);
+
+    color: #222;
+
+    padding: 13px 30px;
+
+    border-radius: 6px;
+
     text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
 }
 
-.container {
-    background-color: white;
-    margin: 20px;
-    padding: 20px;
+.hero-btn:hover {
+
+    background-color: var(--white);
+
+    transform: scale(1.05);
+
 }
 
-h2 {
-    color: navy;
+
+/* ===================================
+   5. MATCH CARDS
+=================================== */
+
+.matches {
+
+    padding: 60px 30px;
+
+    text-align: center;
+
+}
+
+.matches h2 {
+
+    font-size: 30px;
+
+    color: var(--primary);
+
+    margin-bottom: 35px;
+
+}
+
+.match-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+}
+
+.match-card {
+
+    background-color: var(--white);
+
+    width: 300px;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    border: 1px solid #ddd;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+
+}
+
+.match-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+
+}
+
+.match-card h3 {
+
+    color: var(--primary);
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+
+}
+
+.match-card p {
+
+    margin: 10px 0;
+
+}
+
+.match-card a {
+
+    display: inline-block;
+
+    background-color: var(--primary);
+
+    color: var(--white);
+
+    padding: 10px 20px;
+
+    margin-top: 15px;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+}
+
+.match-card a:hover {
+
+    background-color: #24569b;
+
+}
+
+
+/* ===================================
+   6. MATCH SCHEDULE TABLE
+=================================== */
+
+.schedule {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+}
+
+.schedule h2 {
+
+    color: var(--primary);
+
+    margin-bottom: 25px;
+
+    font-size: 30px;
+
+}
+
+.table-container {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    overflow-x: auto;
+
 }
 
 table {
+
     width: 100%;
+
     border-collapse: collapse;
+
+    background-color: var(--white);
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
 }
 
 th, td {
-    border: 1px solid gray;
-    padding: 10px;
+
+    padding: 16px;
+
+    border: 1px solid #ddd;
+
     text-align: center;
+
 }
 
 th {
-    background-color: navy;
-    color: white;
+
+    background-color: var(--primary);
+
+    color: var(--white);
+
 }
 
-.booking-layout, .guidelines {
-    display: flex;
-    gap: 20px;
+tr:nth-child(even) {
+
+    background-color: #eeeeee;
+
 }
 
-form, .summary, .card {
-    padding: 20px;
+tr:hover {
+
+    background-color: #fff2c2;
+
+}
+
+
+/* ===================================
+   7. BOOKING FORM
+=================================== */
+
+.booking {
+
+    padding: 50px 20px;
+
+}
+
+.booking h2 {
+
+    text-align: center;
+
+    color: var(--primary);
+
+    margin-bottom: 25px;
+
+    font-size: 30px;
+
 }
 
 form {
-    width: 60%;
-}
 
-.summary, .card {
-    background-color: lightblue;
+    max-width: 550px;
+
+    margin: auto;
+
+    background-color: var(--white);
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
 }
 
 label {
+
     display: block;
-    margin-top: 10px;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+
 }
 
 input, select {
+
     width: 100%;
-    padding: 8px;
-    margin: 5px 0;
+
+    padding: 12px;
+
+    margin-top: 8px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
 }
+
+input:focus, select:focus {
+
+    outline: none;
+
+    border-color: var(--primary);
+
+}
+
+
+/* ===================================
+   8. FORM BUTTONS
+=================================== */
 
 button {
-    background-color: navy;
-    color: white;
-    padding: 10px;
+
+    background-color: var(--primary);
+
+    color: var(--white);
+
+    padding: 13px 20px;
+
+    margin-top: 20px;
+
     border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+
 }
 
+button:hover {
+
+    background-color: #24569b;
+
+}
+
+.reset-btn {
+
+    background-color: #777;
+
+}
+
+.reset-btn:hover {
+
+    background-color: #444;
+
+}
+
+
+/* ===================================
+   9. FOOTER
+=================================== */
+
 footer {
+
+    background-color: var(--primary);
+
+    color: var(--white);
+
     text-align: center;
+
+    padding: 35px 20px;
+
+    margin-top: 30px;
+
+}
+
+footer h3 {
+
+    color: var(--accent);
+
+    margin-bottom: 10px;
+
+}
+
+footer p {
+
+    margin: 8px 0;
+
+}
+
+
+/* ===================================
+   10. RESPONSIVE DESIGN
+=================================== */
+
+@media (max-width: 768px) {
+
+    header {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 15px;
+
+    }
+
+    nav {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+
+    }
+
+    nav a {
+
+        font-size: 14px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 30px;
+
+    }
+
+    .match-container {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    .match-card {
+
+        width: 100%;
+
+        max-width: 400px;
+
+    }
+
+    form {
+
+        padding: 20px;
+
+    }
+
+}
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    display: inline-block;
+    margin: 0;
+}
+
+.radio-group label {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    font-weight: normal;
+}
+
+.guidelines {
+    background: white;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.guidelines h2 {
+    text-align: center;
+    color: #1e3a8a;
+}
+
+.guidelines h3 {
+    color: #e63946;
+    margin-top: 20px;
+}
+
+.guidelines ul {
+    padding-left: 25px;
+}
+
+.guidelines li {
+    margin: 10px 0;
+    color: #333;
 }
